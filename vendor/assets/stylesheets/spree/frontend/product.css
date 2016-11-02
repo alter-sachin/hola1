@@ -1,6 +1,9 @@
 .product-body {
 height: 200px;
+
 }
+.panel-body{
+padding:0px !important;}
 
 .panel-footer {
     padding: 10px 12px;   
@@ -110,4 +113,5 @@ max-height:65px;
 .carousel-inner>.item>img, .carousel-inner>.item>a>img{
 margin:0 auto;
 }
+
 
