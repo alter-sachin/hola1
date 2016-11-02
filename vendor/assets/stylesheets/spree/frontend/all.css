@@ -36,11 +36,12 @@ background:#fff !important;
 }
 
 
-.add-to-cart .input-group-btn {
-    left: -19%;
+add-to-cart .input-group-btn {
+    left: -32%;
     width: 68%;
     background: #262626;
     text-align: center;
+    top: 50px;
 }
 
 
@@ -92,4 +93,8 @@ margin-top :40px;
 
 body {
 font-family: "proxima-nova",helvetica,arial,sans-serif !important ;
+}
+
+#add-to-cart-button {
+font-size: 20.25px;
 }
