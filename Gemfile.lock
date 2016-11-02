@@ -1,11 +1,4 @@
 GIT
-  remote: git://github.com/alter-sachin/spree_amazon_like_dropdown.git
-  revision: 00f0c81bb764c1b4396b55d36d32f7d4ae2c331e
-  specs:
-    spree_amazon_like_dropdown (0.1.0)
-      spree_core (~> 3.1.0)
-
-GIT
   remote: git://github.com/spree-contrib/spree_mail_settings.git
   revision: e292a7e843e80ddf0337c68ed4093c702ee60f62
   branch: 3-1-stable
@@ -407,7 +400,6 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spree (~> 3.1.0)
-  spree_amazon_like_dropdown!
   spree_auth_devise (~> 3.1.0)
   spree_gateway (~> 3.1.0)
   spree_mail_settings!
