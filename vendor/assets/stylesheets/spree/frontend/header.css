@@ -2,6 +2,7 @@
     background: #fff;
     padding: 0px;
     border-bottom: 1px solid rgba(217,57,52,.38);
+    
 
 }
 
@@ -20,11 +21,10 @@ color:#091b0f;
 
 #nav-bar {
     display: block;
-    text-transform: uppercase;
+
 text-decoration: none;
-font-weight: bold;
-font-size: 11px;
-font-family: 'Oswald';
+
+
 position: relative;
 margin-top:1%;
 }
