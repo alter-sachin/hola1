@@ -115,3 +115,13 @@ div#taxon-crumbs {
 }
 
 
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    color: #fff;
+    background-color: #d93934;
+}
+
+a{
+color:#d93934;
+}
+
+
