@@ -1,11 +1,16 @@
+.product-body {
+height: 240px;
+}
+
 panel-footer {
     padding: 10px 12px;   
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
+    position:relative;
 }
 
 .info {
- color: rgba(217,57,52,.78);
+ color: rgba(217,57,52,1);
  font-size:115% !important;
 }
 
