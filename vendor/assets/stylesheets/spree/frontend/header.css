@@ -14,7 +14,7 @@ margin-bottom :0px;
 #spree-header .nav a{
 color:rgba(217,57,52,.78);
 margin: 0 0 2px 20px;
-    padding: 20px;
+    padding: 10px;
     font-size: 17px;
     font-weight: 500;
 }
@@ -48,14 +48,16 @@ border-color: #4cae4c;
 
 
 #keywords {
-    display: none;
+    display: inline-block;
     width: auto;
     vertical-align: middle;
     height: 27px;
     
 }
 
-
+li#search-bar {
+    display: none;
+}
 
 navbar-nav > li > a {
     padding-top: 0px !important;
