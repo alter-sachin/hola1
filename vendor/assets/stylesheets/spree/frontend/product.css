@@ -103,3 +103,7 @@ font-family: 'Playfair Display';
 background-color : white !important;
 }
 
+.carousel-inner>.item>img, .carousel-inner>.item>a>img{
+margin:0 auto;
+}
+
