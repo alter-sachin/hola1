@@ -98,3 +98,8 @@ font-family: "proxima-nova",helvetica,arial,sans-serif !important ;
 #add-to-cart-button {
 font-size: 20.25px;
 }
+
+
+nav#breadcrumbs {
+    display: none;
+}
