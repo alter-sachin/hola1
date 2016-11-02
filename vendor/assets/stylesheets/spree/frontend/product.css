@@ -56,7 +56,7 @@ font-family: VerlagBook !important;
 
 .info {
 font-size: 20px;
-line-height: 26px;
+line-height: 19px;
 letter-spacing: 0.5px;
 margin-bottom: 11px;
 text-transform:uppercase;
@@ -112,6 +112,12 @@ max-height:65px;
 
 .carousel-inner>.item>img, .carousel-inner>.item>a>img{
 margin:0 auto;
+}
+
+.pagination>.active>a {
+background-color: rgb(217,57,52);
+    border-color: rgb(217,57,52);
+
 }
 
 
