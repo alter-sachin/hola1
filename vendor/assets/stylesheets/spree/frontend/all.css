@@ -60,6 +60,7 @@ height:auto;
 
 #spree-header #logo img {
     width: auto !important;
+    max-width:none;
 }
 
 
