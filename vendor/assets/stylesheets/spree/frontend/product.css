@@ -2,7 +2,7 @@
 height: 200px;
 }
 
-panel-footer {
+.panel-footer {
     padding: 10px 12px;   
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
