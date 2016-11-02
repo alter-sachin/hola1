@@ -48,7 +48,7 @@ border-color: #4cae4c;
 
 
 #keywords {
-    display: inline-block;
+    display: none;
     width: auto;
     vertical-align: middle;
     height: 27px;
