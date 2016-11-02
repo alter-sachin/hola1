@@ -120,4 +120,12 @@ background-color: rgb(217,57,52);
 
 }
 
+.pagination>li>a, .pagination>li>span {
+color:rgb(217,57,52) !important;
+}
+
+
+
+
+
 
