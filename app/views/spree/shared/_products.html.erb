@@ -15,9 +15,10 @@
     </div>
   <% end %>
 </div>
-<h3>Products</h3>
+
 <% if products.any? %>
   <div id="products" class="row" data-hook>
+    <h3>Products</h3>
     <% products.each do |product| %>
       <% url = spree.product_url(product, taxon_id: @taxon.try(:id)) %>
       <div id="product_<%= product.id %>" class="col-md-4 col-sm-6 col-xs-12 product-list-item" data-hook="products_list_item" itemscope itemtype="https://schema.org/Product">
