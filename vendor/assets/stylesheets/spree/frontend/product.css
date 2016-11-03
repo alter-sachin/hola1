@@ -134,4 +134,13 @@ div#product-images {
     max-height: 300px;
 }
 
+button#update-button {
+    background-color: grey;
+    border-color: white;
+}
+
+ul#similar_items_by_taxon {
+    display: inline-flex;
+}
+
 
