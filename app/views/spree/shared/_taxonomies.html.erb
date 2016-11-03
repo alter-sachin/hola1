@@ -8,4 +8,10 @@
     <% end %>
   <% end %>
 </ul>
-
+<script>
+$("#taxonomies > h4:nth-child(1)").hover(function(){
+    $('#taxonomies > div:nth-child(2)').show();
+},function(){
+    $('#taxonomies > div:nth-child(2)').hide();
+});
+</script>
