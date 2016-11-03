@@ -130,4 +130,8 @@ div#product-images {
     padding-top: 6%;
 }
 
+.product-list-item {
+    max-height: 300px;
+}
+
 
