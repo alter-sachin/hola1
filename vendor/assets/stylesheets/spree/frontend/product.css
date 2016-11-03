@@ -143,4 +143,8 @@ ul#similar_items_by_taxon {
     display: inline-flex;
 }
 
+div#sidebar {
+    display: none;
+}
+
 
