@@ -131,3 +131,11 @@ ul#taxonomies {
     left: 9%;
 }
 
+ul.dropdown-menu {
+    width: 21em;
+}
+
+.list-group-item {
+border:none !important;
+}
+
