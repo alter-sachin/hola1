@@ -3,27 +3,9 @@
 <ul id="taxonomies" class="nav navbar-nav" data-hook>
   <% @taxonomies.each do |taxonomy| %>
     <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
-      <li class='taxonomy-root'><%= Spree.t(:shop_by_taxonomy, :taxonomy => taxonomy.name) %></li>
-      <%= taxons_tree(taxonomy.root, @taxon, max_level) %>
+      <li class='taxonomy-root dropdown'> <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= Spree.t(:shop_by_taxonomy, :taxonomy => taxonomy.name) %></li>
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu"><li><%= taxons_tree(taxonomy.root, @taxon, max_level) %></li></ul>
     <% end %>
   <% end %>
 </ul>
-<script>
-$("#taxonomies > li:nth-child(1)").hover(function(){
-    $('#taxonomies > div:nth-child(2)').show();
-},function(){
-    $('#taxonomies > div:nth-child(2)').hide();
-});
-
-$("#taxonomies > li:nth-child(3)").hover(function(){
-    $('#taxonomies > div:nth-child(4)').show();
-},function(){
-    $('#taxonomies > div:nth-child(4)').hide();
-});
-
-
-</script>
-
-<style>
-
-</style>
