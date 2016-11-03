@@ -3,7 +3,7 @@ module Spree
     include Spree::Core::ControllerHelpers::Order
 
     skip_before_action :set_current_order, only: :cart_link
-
+    @taxonomies = Spree::Taxonomy.includes(root: :children)
     def forbidden
       render 'spree/shared/forbidden', layout: Spree::Config[:layout], status: 403
     end

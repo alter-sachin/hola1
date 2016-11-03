@@ -23,6 +23,7 @@ module Spree
     helper 'spree/orders'
 
     rescue_from Spree::Core::GatewayError, with: :rescue_from_spree_gateway_error
+    @taxonomies = Spree::Taxonomy.includes(root: :children)
     def show
 	@taxonomies = Spree::Taxonomy.includes(root: :children)
     end

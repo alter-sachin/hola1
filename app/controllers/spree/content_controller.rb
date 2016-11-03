@@ -7,7 +7,7 @@ module Spree
     rescue_from ActionView::MissingTemplate, :with => :render_404
 
     respond_to :html
-
+    @taxonomies = Spree::Taxonomy.includes(root: :children)
     def show
       render :action => params[:path]
 

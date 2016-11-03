@@ -1,6 +1,7 @@
 module Spree
   class LocaleController < Spree::StoreController
-    def set
+   @taxonomies = Spree::Taxonomy.includes(root: :children) 
+   def set
       if request.referer && request.referer.starts_with?('http://' + request.host)
         session['user_return_to'] = request.referer
       end
@@ -14,6 +15,6 @@ module Spree
     end
     def show
 	@taxonomies = Spree::Taxonomy.includes(root: :children)
-end
+    end
   end
 end

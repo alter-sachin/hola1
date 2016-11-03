@@ -4,7 +4,7 @@ module Spree
     helper 'spree/products'
 
     respond_to :html
-
+    @taxonomies = Spree::Taxonomy.includes(root: :children)
     def show
       @taxon = Taxon.friendly.find(params[:id])
       return unless @taxon
