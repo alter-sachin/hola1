@@ -125,3 +125,9 @@ color:#d93934;
 }
 
 
+ul#taxonomies {
+    position: relative;
+    margin-top: 2%;
+    left: 5%;
+}
+
