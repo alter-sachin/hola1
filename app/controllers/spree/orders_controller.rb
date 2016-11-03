@@ -11,8 +11,7 @@ module Spree
 
     def show
       @order = Order.includes(line_items: [variant: [:option_values, :images, :product]], bill_address: :state, ship_address: :state).find_by_number!(params[:id])
-	@taxonomies = Spree::Taxonomy.includes(root: :children)
-
+      @taxonomies = Spree::Taxonomy.includes(root: :children)
     end
 
     def update
