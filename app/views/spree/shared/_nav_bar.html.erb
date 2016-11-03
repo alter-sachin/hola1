@@ -16,3 +16,10 @@
 
 </div>
 </nav>
+
+<script>
+
+$(':contains("Shop by")').each(function(){
+    $(this).html($(this).html().split("Shop by").join(""));
+});
+</script>
