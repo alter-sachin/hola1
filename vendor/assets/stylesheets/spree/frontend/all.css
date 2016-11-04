@@ -143,3 +143,10 @@ border:none !important;
     background: rgba(239, 177, 177, 0.4);
 }
 
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    z-index: 2;
+    color: #fff;
+    background-color: rgba(217,57,52,0.08);
+    border-color: rgba(217,57,52,0.78);
+}
+
