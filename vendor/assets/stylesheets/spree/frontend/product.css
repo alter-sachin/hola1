@@ -148,7 +148,7 @@ div#sidebar {
 }
 
 
-h5.subtaxon-title {
+h5.subtaxon-title,h1.taxon-title {
     font-size: 2em;
 }
 
