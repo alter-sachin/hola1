@@ -26,3 +26,4 @@ Spree::Image.class_eval do
   }
 end
 
+Rails.application.config.spree.payment_methods << Spree::BillingIntegration::Payu
