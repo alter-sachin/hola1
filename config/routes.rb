@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
-  resources :orders, :only => [] do
-     resource :checkout, :controller => 'checkout' do
-       member do
-         post :process_payment
-         post :cancel_payment
-       end
-     end
-   end
+  
   # This line mounts Spree's routes at the root of your application.
   # This means, any requests to URLs such as /products, will go to Spree::ProductsController.
   # If you would like to change where this engine is mounted, simply change the :at option to something different.
@@ -15,7 +8,18 @@ Rails.application.routes.draw do
   mount Spree::Core::Engine, at: '/'
           # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  Spree::Core::Engine.routes.draw do
 
+   resources :orders, :only => [] do
+     resource :checkout, :controller => 'checkout' do
+       member do
+         post :process_payment
+         post :cancel_payment
+       end
+     end
+   end
+
+ end
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
     # Routes to static pages are defined with simple, unparameterized rules
