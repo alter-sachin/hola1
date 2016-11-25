@@ -15,7 +15,7 @@ module Spree
       integration_module = OffsitePayments::integration('payu_in')
       notification_class = integration_module.const_get('Notification')
       notification = notification_class.new(params.to_query, options = {:credential1 => Rails.application.secrets.payu_key, :credential2 => Rails.application.secrets.payu_secret})
-      payu_transaction = Spree::Payu.new(notification.params.slice("mihpayid" , "mode" , "order_id", "status" , "email" , "phone" , "name_on_card" , "bankcode" , "net_amount_debit" , "amount" , "discount" , "error" , "error_Message" , "PG_TYPE" , "bank_ref_num" , "cardCategory" , "card_type", "addedon"))
+      payu_transaction = Spree::BillingIntegration::Payu.new(notification.params.slice("mihpayid" , "mode" , "order_id", "status" , "email" , "phone" , "name_on_card" , "bankcode" , "net_amount_debit" , "amount" , "discount" , "error" , "error_Message" , "PG_TYPE" , "bank_ref_num" , "cardCategory" , "card_type", "addedon"))
       if notification.acknowledge and notification.complete?
         payment = @order.payments.find_by_number(notification.invoice)
         if payment.present?
