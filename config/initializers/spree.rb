@@ -27,3 +27,5 @@ Spree::Image.class_eval do
 end
 
 Rails.application.config.spree.payment_methods << Spree::BillingIntegration::Payu
+
+Spree::PermittedAttributes.user_attributes.push :phone
