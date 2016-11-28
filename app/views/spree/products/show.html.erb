@@ -34,7 +34,25 @@
  itemprop="description" data-hook="description">
             <%= product_description(@product) %>
           </div>
+<script>
 
+var pin = ["110001", "110003", "110004", "110005", "110007", "110008", "110010", "110011", "110012", "110014", "110015", "110016", "110017", "110018", "110019", "110021", "110022", "110023", "110024", "110025", "110026", "110027", "110028", "110029", "110048", "110049", "110055", "110057", "110058", "110059", "110063", "110064", "110065", "110067", "110069", "110070"];
+
+function include(pin){
+   var obj = parseInt(document.getElementById("pincode"));
+   
+   for(var i=0;i<pin.length;i++){
+     if (pin[i] == obj){
+   document.getElementById("unsupported").style.display="inline";}
+    else{
+    document.getElementById("supported").style.display="inline";   
+
+}
+
+}
+}
+}
+</script>
 		
 <input type="text" id="pincode" pattern="[1-9][0-9]{5}" />   
 <input type= "button" onClick="include(110048)" />
@@ -56,25 +74,7 @@ input:invalid {
 
 
 </style>
-<script>
 
-var pin = ["110001", "110003", "110004", "110005", "110007", "110008", "110010", "110011", "110012", "110014", "110015", "110016", "110017", "110018", "110019", "110021", "110022", "110023", "110024", "110025", "110026", "110027", "110028", "110029", "110048", "110049", "110055", "110057", "110058", "110059", "110063", "110064", "110065", "110067", "110069", "110070"];
-
-function include(pin){
-   var obj = parseInt(document.getElementById("pincode"));
-   
-   for(var i=0;i<pin.length;i++){
-     if (pin[i] == obj){
-   document.getElementById("unsupported").style.display="inline";}
-    else{
-    document.getElementById("supported").style.display="inline";   
-
-}
-
-}
-}
-}
-</script>
 
 
           <div id="cart-form" data-hook="cart_form">
