@@ -34,46 +34,25 @@
  itemprop="description" data-hook="description">
             <%= product_description(@product) %>
           </div>
-<script>
+<%time =  Time.now.in_time_zone('Chennai').hour %>
+ <% date1 = DateTime.now.in_time_zone('Chennai').to_date + 2 %>
+ <% date2 = DateTime.now.in_time_zone('Chennai').to_date + 3 %>
+ <% puts time %>
+  <% puts date1 %>
+  <% puts date2 %>
 
-var pin = ["110001", "110003", "110004", "110005", "110007", "110008", "110010", "110011", "110012", "110014", "110015", "110016", "110017", "110018", "110019", "110021", "110022", "110023", "110024", "110025", "110026", "110027", "110028", "110029", "110048", "110049", "110055", "110057", "110058", "110059", "110063", "110064", "110065", "110067", "110069", "110070"];
-
-function include(pin){
-   var obj = parseInt(document.getElementById("pincode"));
-   
-   for(var i=0;i<pin.length;i++){
-     if (pin[i] == obj){
-   document.getElementById("unsupported").style.display="inline";}
-    else{
-    document.getElementById("supported").style.display="inline";   
-
-}
-
-}
-}
-}
-</script>
-		
-<input type="text" id="pincode" pattern="[1-9][0-9]{5}" />   
-<input type= "button" onClick="include(pin)" />
-
-<div id = "unsupported" style="display:none">
-<p>
-Cakes served !
-</p> </div>      
-<div id = "supported" style="display:none">
-<p>
-Sorry we do not deliver in these areas currently.
-We will love to serve you some cakes soon though
-</p> 
-</div>
-<style>
-input:invalid {
-  color: white;
-}
+  <% if time>0 and time<13 %>
+  	<% delivery="Will be delivered to you between 2pm to 4pm on " + date1.to_s %>
+    <% puts delivery %>
+  <%elsif time >=13 and time <17
+  	<% delivery="Will be delivered to you between 6pm to 8pm on " + date1.to_s %>
+    <% puts delivery %>
+  <%else %>
+  	<%delivery="Will be delivered to you between 2pm to 4 pm on " + date2.to_s %>
+    <% puts delivery %>
+  <% end %>
 
 
-</style>
 
 
 
