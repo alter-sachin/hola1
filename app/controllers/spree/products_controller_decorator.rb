@@ -1,6 +1,6 @@
 Spree::ProductsController.class_eval do
    before_action :load_data, :only => :time_delivery
-  
+   helper_method :time_delivery
   def time_delivery
     # your code goes here
     time =  Time.now.in_time_zone('Chennai').hour
