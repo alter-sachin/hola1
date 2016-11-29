@@ -5,9 +5,9 @@
   <div class="panel-body">
     <%= render :partial => 'spree/shared/order_details', :locals => { :order => @order } %>
   </div>
-  <div id="time"><%= time = time_delivery %>hello</div>
+  
 </div>
-
+<div id="time"><%= time = time_delivery %>hello</div>
 <div class="well text-right form-buttons" data-hook="buttons">
   <%= submit_tag Spree.t(:place_order), :class => 'btn btn-lg btn-success' %>
   <script>Spree.disableSaveOnClick();</script>
