@@ -33,8 +33,9 @@
            <div class="well" 
  itemprop="description" data-hook="description">
             <%= product_description(@product) %>
+            
+	   <div id="time"><%= @delivery  %></div>
           </div>
-
           <div id="cart-form" data-hook="cart_form">
             <%= render :partial => 'cart_form' %>
           </div>
