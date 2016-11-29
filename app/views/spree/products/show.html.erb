@@ -55,18 +55,18 @@ function include(pin){
 </script>
 		
 <input type="text" id="pincode" pattern="[1-9][0-9]{5}" />   
-<input type= "button" onClick="include('110048')" />
+<input type= "button" onClick="include(pin)" />
 
 <div id = "unsupported" style="display:none">
 <p>
 Cakes served !
 </p> </div>      
-<div id = "unsupported" style="display:none">
+<div id = "supported" style="display:none">
 <p>
 Sorry we do not deliver in these areas currently.
 We will love to serve you some cakes soon though
-
-</p> </div>
+</p> 
+</div>
 <style>
 input:invalid {
   color: white;
