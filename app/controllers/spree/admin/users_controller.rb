@@ -1,13 +1,12 @@
 module Spree
   module Admin
     class UsersController < ResourceController
-      rescue_from Spree::User::DestroyWithOrdersError, :with => :user_destroy_with_orders_error
+      rescue_from Spree::Core::DestroyWithOrdersError, :with => :user_destroy_with_orders_error
 
-      update.after :sign_in_if_change_own_password
+      after_action :sign_in_if_change_own_password, only: :update
 
       # http://spreecommerce.com/blog/2010/11/02/json-hijacking-vulnerability/
-      before_filter :check_json_authenticity, :only => :index
-      before_filter :load_roles, :only => [:edit, :new, :update, :create, :generate_api_key, :clear_api_key]
+      before_action :check_json_authenticity, only: :index
 
       def index
         respond_with(@collection) do |format|
@@ -16,19 +15,14 @@ module Spree
         end
       end
 
+      def show
+        redirect_to edit_admin_user_path(@user)
+      end
+
       def create
-        if params[:user]
-          roles = params[:user].delete("spree_role_ids")
-        end
-
-        @user = Spree::User.new(user_params)
+        @user = Spree.user_class.new(user_params)
         if @user.save
-
-          if roles
-            @user.spree_roles = roles.reject(&:blank?).collect{|r| Spree::Role.find(r)}
-          end
-
-          flash.now[:success] = Spree.t(:created_successfully)
+          flash.now[:success] = flash_message_for(@user, :successfully_created)
           render :edit
         else
           render :new
@@ -36,25 +30,41 @@ module Spree
       end
 
       def update
-        if params[:user]
-          roles = params[:user].delete("spree_role_ids")
+        if params[:user][:password].blank? && params[:user][:password_confirmation].blank?
+          params[:user].delete(:password)
+          params[:user].delete(:password_confirmation)
         end
 
         if @user.update_attributes(user_params)
-          if roles
-            @user.spree_roles = roles.reject(&:blank?).collect{|r| Spree::Role.find(r)}
+          flash.now[:success] = Spree.t(:account_updated)
+        end
+
+        render :edit
+      end
+
+      def addresses
+        if request.put?
+          if @user.update_attributes(user_params)
+            flash.now[:success] = Spree.t(:account_updated)
           end
 
-          if params[:user][:password].present?
-            # this logic needed b/c devise wants to log us out after password changes
-            user = Spree::User.reset_password_by_token(params[:user])
-            sign_in(@user, :event => :authentication, :bypass => !Spree::Auth::Config[:signout_after_password_change])
-          end
-          flash.now[:success] = Spree.t(:account_updated)
-          render :edit
-        else
-          render :edit
+          render :addresses
         end
+      end
+
+      def orders
+        params[:q] ||= {}
+        @search = Spree::Order.reverse_chronological.ransack(params[:q].merge(user_id_eq: @user.id))
+        @orders = @search.result.page(params[:page]).per(Spree::Config[:admin_products_per_page])
+      end
+
+      def items
+        params[:q] ||= {}
+        @search = Spree::Order.includes(
+          line_items: {
+            variant: [:product, { option_values: :option_type }]
+          }).ransack(params[:q].merge(user_id_eq: @user.id))
+        @orders = @search.result.page(params[:page]).per(Spree::Config[:admin_products_per_page])
       end
 
       def generate_api_key
@@ -71,14 +81,17 @@ module Spree
         redirect_to edit_admin_user_path(@user)
       end
 
+      def model_class
+        Spree.user_class
+      end
+
       protected
 
         def collection
           return @collection if @collection.present?
+          @collection = super
           if request.xhr? && params[:q].present?
-            #disabling proper nested include here due to rails 3.1 bug
-            #@collection = User.includes(:bill_address => [:state, :country], :ship_address => [:state, :country]).
-            @collection = Spree::User.includes(:bill_address, :ship_address)
+            @collection = @collection.includes(:bill_address, :ship_address)
                               .where("spree_users.email #{LIKE} :search
                                      OR (spree_addresses.firstname #{LIKE} :search AND spree_addresses.id = spree_users.bill_address_id)
                                      OR (spree_addresses.lastname  #{LIKE} :search AND spree_addresses.id = spree_users.bill_address_id)
@@ -87,46 +100,46 @@ module Spree
                                     { :search => "#{params[:q].strip}%" })
                               .limit(params[:limit] || 100)
           else
-            @search = Spree::User.registered.ransack(params[:q])
+            @search = @collection.ransack(params[:q])
             @collection = @search.result.page(params[:page]).per(Spree::Config[:admin_products_per_page])
           end
         end
 
       private
-        def user_params
-          params.require(:user).permit(PermittedAttributes.user_attributes.push :spree_role_ids)
-        end
 
-        # handling raise from Spree::Admin::ResourceController#destroy
-        def user_destroy_with_orders_error
-          invoke_callbacks(:destroy, :fails)
-          render :status => :forbidden, :text => Spree.t(:error_user_destroy_with_orders)
-        end
+      def user_params
+        params.require(:user).permit(PermittedAttributes.user_attributes.push |
+                                     [spree_role_ids: [],
+                                      ship_address_attributes: permitted_address_attributes,
+                                      bill_address_attributes: permitted_address_attributes])
+      end
 
-        # Allow different formats of json data to suit different ajax calls
-        def json_data
-          json_format = params[:json_format] or 'default'
-          case json_format
-          when 'basic'
-            collection.map { |u| { 'id' => u.id, 'name' => u.email } }.to_json
-          else
-            address_fields = [:firstname, :lastname, :address1, :address2, :city, :zipcode, :phone, :state_name, :state_id, :country_id]
-            includes = { :only => address_fields , :include => { :state => { :only => :name }, :country => { :only => :name } } }
+      # handling raise from Spree::Admin::ResourceController#destroy
+      def user_destroy_with_orders_error
+        invoke_callbacks(:destroy, :fails)
+        render status: :forbidden, text: Spree.t(:error_user_destroy_with_orders)
+      end
 
-            collection.to_json(:only => [:id, :email], :include =>
-                               { :bill_address => includes, :ship_address => includes })
-          end
-        end
+      # Allow different formats of json data to suit different ajax calls
+      def json_data
+        json_format = params[:json_format] || 'default'
+        case json_format
+        when 'basic'
+          collection.map { |u| { 'id' => u.id, 'name' => u.email } }.to_json
+        else
+          address_fields = [:firstname, :lastname, :address1, :address2, :city, :zipcode, :phone, :state_name, :state_id, :country_id]
+          includes = { only: address_fields, include: { state: { only: :name }, country: { only: :name } } }
 
-        def sign_in_if_change_own_password
-          if spree_current_user == @user && @user.password.present?
-            sign_in(@user, :event => :authentication, :bypass => true)
-          end
+          collection.to_json(only: [:id, :email], include:
+                             { bill_address: includes, ship_address: includes })
         end
+      end
 
-        def load_roles
-          @roles = Spree::Role.all
+      def sign_in_if_change_own_password
+        if try_spree_current_user == @user && @user.password.present?
+          sign_in(@user, event: :authentication, bypass: true)
         end
+      end
     end
   end
 end
