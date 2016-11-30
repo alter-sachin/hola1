@@ -18,6 +18,7 @@ for (var i =0 ;i<pin.length ; i++){
          if( val == pin[i]){
            document.getElementById("show").style.display="block";
 	   document.getElementById("notshow").style.display="none";
+           break;
          } else{
            document.getElementById("notshow").style.display="block";
 	   document.getElementById("show").style.display="none";
