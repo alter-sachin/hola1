@@ -17,10 +17,10 @@ var pin = [110001, 110003, 110004, 110005, 110007, 110008, 110010, 110011, 11001
 for (var i =0 ;i<pin.length ; i++){
          if( val == pin[i]){
 	   document.getElementById("notshow").style.display="none";
-           document.getElementById("show").style.display = "block";
-	   
-         } else{
-         document.getElementById("show").style.display = "none";
+           document.getElementById("show").style.display ="block";
+         } 
+	 else{
+         document.getElementById("show").style.display="none";
          document.getElementById("notshow").style.display="block";
          }  
      }
