@@ -34,10 +34,10 @@
  itemprop="description" data-hook="description">
             <%= product_description(@product) %>
             
-	   <div id="time"><%=time = time_delivery %></div>
+	   <div id="time"><%=time = time_delivery %></div><br/>
 	   <div id="pincode-check">
 		<input type="text" id="ad_search_query" style="width:295px" pattern="[0-9][1-9]{5}">&nbsp; 
-		<input type="button" value="search" class="p-userButton" onClick="showTable(document.getElementById('ad_search_query').value);"/>
+		<input type="button" value="Check Availability" class="p-userButton" onClick="showTable(document.getElementById('ad_search_query').value);"/>
 		<div id="show" style="display:none;">We deliver in this area!</div>
 		<div id="notshow" style="display:none;">Sorry, This Area is currently not supported.</div>
 	    </div>
