@@ -20,6 +20,7 @@ for (var i =0 ;i<pin.length ; i++){
            document.getElementById("show").style.display = "block";
 	   
          } else{
+         document.getElementById("show").style.display = "none";
          document.getElementById("notshow").style.display="block";
          }  
      }
