@@ -40,7 +40,25 @@
 	  <input type="button" value="search" class="p-userButton" onClick="showTable(document.getElementById('ad_search_query').value);"/>
 	  <div id="show" style="display:none;">supported</div>
 	  <div id="notshow" style="display:none;">unsupported</div>	
-		<style>
+		
+          <div id="cart-form" data-hook="cart_form">
+            <%= render :partial => 'cart_form' %>
+          </div>
+	
+        </div>
+
+     
+      </div>
+    </div>
+
+        </div>
+<div id="taxon-crumbs" class="nav navbar-nav" style="color:rgba(217,57,52);position:relative;top:25px;" data-hook="product_taxons">
+          <%= render :partial => 'taxons' %>
+  </div>
+<% end %>
+
+
+<style>
 		input:invalid {
 		color:blue;
 			}
@@ -57,19 +75,4 @@
      			}
      		}
 		</script>
-          <div id="cart-form" data-hook="cart_form">
-            <%= render :partial => 'cart_form' %>
-          </div>
-	
-        </div>
-
-     
-      </div>
-    </div>
-
-        </div>
-<div id="taxon-crumbs" class="nav navbar-nav" style="color:rgba(217,57,52);position:relative;top:25px;" data-hook="product_taxons">
-          <%= render :partial => 'taxons' %>
-  </div>
-<% end %>
 
