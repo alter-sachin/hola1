@@ -32,6 +32,7 @@
         <div class="product-container">
           <div class="product-top">
             <span><%= link_to product.taxons.all.find{|x| x.taxonomy.name == "Categories" }.name, seo_url(product.taxons.all.find{|x| x.taxonomy.name == "Categories" }) %></span>
+            <span><%= link_to product.taxons.all.find{|x| x.taxonomy.name == "Bakers" }.name, seo_url(product.taxons.all.find{|x| x.taxonomy.name == "Bakers" }) %></span>
             <%= link_to url do%>
             <%= content_tag(:h6, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
             <% end %>
