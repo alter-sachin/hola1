@@ -30,17 +30,17 @@
       <div data-hook="product_right_part_wrap">
         <div id="product-description" data-hook="product_description">
           <h1 class="product-title" itemprop="name"><%= @product.name %></h1>
-           <div class="well" 
+           <div class="desc" 
  itemprop="description" data-hook="description">
             <%= product_description(@product) %>
             
 	   <div id="time"><%=time = time_delivery %></div><br/>
-	   <div id="pincode-check">
-		<input type="text" id="ad_search_query" style="width:295px" pattern="[0-9][1-9]{5}">&nbsp; 
-		<input type="button" value="Check Availability" class="p-userButton" onClick="showTable(document.getElementById('ad_search_query').value);"/>
-		<div id="show" style="display:none;">We deliver in this area!</div>
-		<div id="notshow" style="display:none;">Sorry, This Area is currently not supported.</div>
+	   <div id="pincode-check" class="input-group">
+		<input type="text" id="ad_search_query" placeholder="Enter Delivery Pincode" style="width:295px" pattern="[0-9][1-9]{5}" class="form-control">&nbsp; 
+		<input type="button" id="btn-chkPin" value="Check Availability" class="p-userButton input-group-addon" onClick="showTable(document.getElementById('ad_search_query').value);"/>
 	    </div>
+      <div id="show" style="display:none;">We deliver in this area!</div>
+    <div id="notshow" style="display:none;">Sorry, This Area is currently not supported.</div>
           </div>
           
           <div id="cart-form" data-hook="cart_form">
@@ -54,7 +54,7 @@
     </div>
 
         </div>
-<div id="taxon-crumbs" class="nav navbar-nav" style="color:rgba(217,57,52);position:relative;top:25px;" data-hook="product_taxons">
+<div id="taxon-crumbs" class="nav navbar-nav" data-hook="product_taxons">
           <%= render :partial => 'taxons' %>
   </div>
 <% end %>

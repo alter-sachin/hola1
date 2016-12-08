@@ -12,10 +12,11 @@ margin-bottom :0px;
 }
 
 #spree-header .nav a{
-color:rgba(217,57,52,.78);
+    color: #D93934;
     padding: 10px;
     font-size: 17px;
     font-weight: 500;
+    font-family: ubuntu-regular;
 }
 
 #spree-header #logo {
@@ -62,4 +63,9 @@ navbar-nav > li > a {
     padding-top: 0px !important;
     padding-bottom: 0px;
     line-height: 10px;
+}
+
+.head-top{
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
 }

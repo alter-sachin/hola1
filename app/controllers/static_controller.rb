@@ -11,5 +11,7 @@ class StaticController < ApplicationController
   end
   def contact
   end
+  def faq
+  end
 
 end

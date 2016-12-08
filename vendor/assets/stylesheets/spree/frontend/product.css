@@ -3,7 +3,8 @@ height: 200px;
 
 }
 .panel-body{
-padding:0px !important;}
+padding: 1.5em !important;
+}
 
 .panel-footer {
     padding: 10px 12px;   
@@ -18,7 +19,7 @@ padding:0px !important;}
 }
 
 .lead {
-	font-size: 16px;
+    font-size: 16px;
 }
 
 .popover {
@@ -29,9 +30,6 @@ height : 360px !important;
     border-color: white !important;
 }
 
-
-
-
 .lead {
     font-size: 18px;
     color: #373333;
@@ -39,6 +37,14 @@ height : 360px !important;
 
 .product-section-title {
     font-size: 18px;
+    font-family: ubuntu-regular;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 0.5em;
+}
+
+#product-variants {
+    font-family: ubuntu-regular;
 }
 
 .panel-body.text-center.product-body a {
@@ -49,7 +55,6 @@ height : 360px !important;
 font-size: 20px;
 line-height: 19px;
 letter-spacing: 0.5px;
-margin-bottom: 11px;
 }
 
 .info:hover {
@@ -82,11 +87,11 @@ font-weight: 300;
 
 
 .product-title {
+    padding-top: 0.9em;
+    font-family: ubuntu-regular;
     margin-bottom: 8px;
-   font-size: 4rem;
+   font-size: 3em;
     letter-spacing: -0.046rem;
-    line-height: 5.25rem;
-font-weight: bold;
 }
 
 
@@ -102,6 +107,10 @@ font-weight: bold;
 background-color : white !important;
 max-height:65px;
     border-top: 1px solid #fff;
+}
+
+.carousel-inner {
+    width: 100vw;
 }
 
 .carousel-inner>.item>img, .carousel-inner>.item>a>img{
@@ -152,3 +161,69 @@ h5.subtaxon-title,h1.taxon-title {
     font-size: 2em;
 }
 
+.desc {
+    font-family: ubuntu-regular;
+    font-size: 0.9em;
+    color: #2e2e2e;
+    padding-bottom: 1em;
+}
+
+#time {
+    color: #D93934;
+    margin-top: 0.75em;
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+#pincode-check {
+    width: 100%;
+    padding-bottom: 0.5em;
+    padding-left: 5%;
+}
+
+#ad_search_query {
+    width: 69%;
+}
+
+#btn-chkPin {
+    width: 30%;
+    float: left;
+    height: 34px;
+}
+
+#social_nav {
+    display: none;
+}
+#taxon-crumbs {
+    width: 100%;
+}
+#similar_items_by_taxon {
+    width: 100%;
+}
+#similar_items_by_taxon > li {
+    width: 50%;
+    text-align: center;
+}
+
+#quantity {
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.lead.price.selling {
+    float: right;
+}
+
+#in-grp-add {
+    width: 100%;
+}

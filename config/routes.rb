@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get '/static/privacy',to: 'static#privacy',as:"privacy"
   get '/static/about', to: 'static#about',as:"about"
   get '/static/contact', to: 'static#contact',as:"contact"
+  get '/static/faq', to: 'static#faq', as: "faq"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

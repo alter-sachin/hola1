@@ -1,16 +1,22 @@
 <div id="spree-header">
-  <header id="header" data-hook>
+  <div class="header-top">
     <div class="container">
-      <div class="row">
-        <figure id="logo" class="col-md-2 col-sm-3" data-hook>
-          <%= logo %>
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
-        <span class="icon-bar" style="background-color:#db423d;"></span>
-        <span class="icon-bar" style="background-color:#db423d;"></span>
-        <span class="icon-bar" style="background-color:#db423d;"></span> 
-</button>
-        </figure>
-	
+      <div class="header-login">
+        <ul >
+          <li id="link-to-login" data-hook>
+        <% if spree_current_user %>
+  <li><%= link_to Spree.t(:my_account), spree.account_path %></li>
+  <li><%= link_to Spree.t(:logout), spree.logout_path %></li>
+<% else %>
+  <li id="link-to-login"><%= link_to Spree.t(:login), spree.login_path %></li>
+<% end %>
+      </li>
+        </ul>
+      </div>
+      <div class="clearfix"> </div>
+    </div>
+  </div>
+  
         <%= render :partial => 'spree/shared/nav_bar' %>
       </div>
     </div>

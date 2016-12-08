@@ -45,9 +45,6 @@ background:#fff !important;
 }
 
 
-#quantity {
-    width: 50%;
-}
 
 img {
 max-width:100%;
@@ -81,11 +78,6 @@ height:auto;
 list-style:none;
 }
 
-variant-description {
-    position: relative;
-    top: -4px;
-    font-size: 18px;
-}
 
 #products {
 margin-top :40px;
@@ -150,3 +142,76 @@ border:none !important;
     border-color: rgba(217,57,52,0.78);
 }
 
+.time {
+    color: #d93934;
+    margin-top: 0.75em;
+    padding-top: 0.75em;
+    border-top: 1px solid #eee;
+}
+
+.taxon-title {
+    font-size: 24px;
+    padding-top: 2em;
+    width: 100%;
+    text-align: center;
+}
+
+.subtaxon-title {
+    text-align: center;
+    font-size: 1.5em !important;
+    color: #2e2e2e;
+}
+
+.subtaxon-title > a {
+    color: #2e2e2e;
+}
+
+#social-signin-links {
+    padding-top: 1em;
+    text-align: center;
+}
+
+.panel-heading {
+    margin-top: 1em;
+}
+
+#social-signin-links {
+    padding-top: 1em;
+    text-align: center;
+}
+
+#social-signin-links > h4 {
+    margin-bottom: 1em;
+}
+
+.existing-customer > .text-center {
+    padding-top: 1em;
+}
+
+.panel-heading {
+    margin-top: 1em;
+}
+
+.new_spree_user > .btn {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#content > div > h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#content > div > div > p {
+    text-align: center;
+    margin-bottom: 1em;
+}
+.alert {
+    text-align: center;
+}
+
+#cart-detail > thead {
+    color: #d93934 !important;
+}

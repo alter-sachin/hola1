@@ -15,20 +15,12 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="http://i.imgur.com/845KQqc.jpg" alt="Flower">
+      <img src="/assets/images/webbanner.jpg" alt="Flower">
      
-    </div>
-
-    <div class="item">
-      <img src="http://i.imgur.com/Kw6gaPu.jpg" alt="Chania">
-    </div>
-
-    <div class="item">
-       <img src="http://i.imgur.com/WJxm13e.jpg" alt="Chania">
-    </div>
-
-    
+    </div>  
   </div>
+
+</div>
 
   <!-- Left and right controls 
   <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -42,6 +34,8 @@
 </div>
 -->
 
+<h3 style="width: 100%;text-align: center;font-family: ubuntu-bold; padding-top: 1em;">Trending Items</h3>
+<label class="line"></label>
 
 
 <div data-hook="homepage_products">
@@ -51,4 +45,65 @@
   <% end %>
 </div>
 
+<h3 style="width: 100%;text-align: center;font-family: ubuntu-bold; padding-top: 1em;">Trending Articles</h3>
+<label class="line"></label>
 
+<div class="content-mid">
+  <div class="row article-container row-eq-height" id="article-loading">
+    <div class="col-md-12 article-bounds" id="home-featured-article">
+      </div>
+  </div>
+  <div class="row article-set" id="home-recent-articles">
+  <div class="clearfix"></div>
+  </div>
+</div>
+
+<style>
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+</style>
+
+<script type="text/javascript" charset="utf-8">
+  $().ready(function() {
+
+    console.log(-1 * $('#myCarousel').offset().left);
+      $('.carousel-inner').css('left',-1 * $('#myCarousel').offset().left);
+
+    $(window).resize(function(){
+      console.log(-1 * $('#myCarousel').offset().left);
+      $('.carousel-inner').css('left',-1 * $('#myCarousel').offset().left);
+    });
+
+    $.ajax({
+        type: 'POST',
+        url: 'http://www.eattreatonline.com/api/get_recent_posts',
+        data: 'count=6',
+        beforeSend: function(){
+          $('#home-featured-article').html('<i class="glyphicon glyphicon-refresh gly-spin" style="width:100%;text-align:center;font-size:5em;animation:spin 2s infinite linear;"></i><br><div style="width:100%;text-align:center;font-size:3em;"">Loading Articles...</div>');
+        },
+        success: function(json) {
+          $('#article-loading').remove();
+          for(i = 5; i >= 0; i--){
+            $('#home-recent-articles').prepend('<div class="col-md-4 article-container eq-height"><a href="' + json.posts[i].url + '" class="b-link-stroke b-animate-go  thickbox article-bounds article-trending"><div img-src="' + json.posts[i].thumbnail_images.large.url + '" class="bg-img article-bounds" alt=""></div><div class="b-wrapper1 long-img"><div class="home-article"><h3 class="home-article-title">' + json.posts[i].title + '</h3><div class="home-article-content"> ' + json.posts[i].excerpt + '</div></div></div></a></div>');
+          }
+
+          $('.bg-img').each(function(){
+            $(this).css({"background-image" : "url('" + $(this).attr('img-src') + "')", "background-size" : "cover", "background-position" : "center"});
+          })
+
+          $('.home-article').each(function(){
+            $(this).parent().hover(function(){
+              $(this).children('.home-article').animate({bottom : "0"}, 500);
+            },function(){
+              $topPos = (-1 * ( $(this).children('.home-article').height() - $(this).children('.home-article').children('.home-article-title').height() - parseInt($(this).children('.home-article').children('.home-article-title').css('padding-top')) - 12));
+              $(this).children('.home-article').animate({bottom : $topPos }, 300);
+            });
+
+            $(this).css("bottom" , function(){return (-1 * ( $(this).height() - $(this).children('.home-article-title').height() - parseInt($(this).children('.home-article-title').css('padding-top')) - 12))});
+          });
+        }
+    });
+  });
+</script>

@@ -13,15 +13,18 @@
 //= require spree/frontend/spree_social_products
 
 function showTable(val){
-var pin = [110001, 110003, 110004, 110005, 110007, 110008, 110010, 110011, 110012, 110014, 110015, 110016, 110017, 110018, 110019, 110021, 110022, 110023, 110024, 110025, 110026, 110027, 110028, 110029, 110048, 110049, 110055, 110057, 110058, 110059, 110063, 110064, 110065, 110067, 110069, 110070];
+        console.log(val);
+	var pin = [110001, 110003, 110004, 110005, 110007, 110008, 110010, 110011, 110012, 110014, 110015, 110016, 110017, 110018, 110019, 		110021, 110022, 110023, 110024, 110025, 110026, 110027, 110028, 110029, 110048, 110049, 110055, 110057, 110058, 110059, 110063, 110064, 	110065, 110067, 110069, 110070];
 for (var i =0 ;i<pin.length ; i++){
          if( val == pin[i]){
            document.getElementById("show").style.display="block";
 	   document.getElementById("notshow").style.display="none";
+	   document.getElementById("add-cart-button").disabled=false;
            break;
          } else{
            document.getElementById("notshow").style.display="block";
 	   document.getElementById("show").style.display="none";
+           document.getElementById("add-cart-button").disabled=true;
          }  
      }
 }
