@@ -35,7 +35,6 @@
             <%= link_to url do%>
             <%= content_tag(:h6, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
             <% end %>
-            <span><%= link_to product.taxons.all.find{|x| x.taxonomy.name == "Bakers" }.name, seo_url(product.taxons.all.find{|x| x.taxonomy.name == "Bakers" }) %></span>
           </div>
           <div class="clearfix"></div>
         </div>
