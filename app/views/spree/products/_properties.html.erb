@@ -1,0 +1,19 @@
+<% unless @product_properties.empty? %>  
+  <h3 class="product-section-title"></h3>
+  <style>
+    td { color:black;position:relative;left:10px;}
+  </style>
+  <table id="product-properties" class="table table-striped" align="center" data-hook>
+    <tbody>
+      <% @product_properties.each do |product_property| %>
+        
+        <tr class="" style="display:inline-block;width:33%;">
+          <td><%= product_property.property.presentation %></td>
+          <td><%= product_property.value %></td>
+        </tr>
+      <% end %>
+      
+    </tbody>
+  </table>
+<% end %>
+

@@ -215,3 +215,13 @@ border:none !important;
 #cart-detail > thead {
     color: #d93934 !important;
 }
+
+
+.carousel-control {
+    background-image: none!important;
+    width:0% !important;
+}
+
+
+
+

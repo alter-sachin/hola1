@@ -14,10 +14,9 @@
             <%= render :partial => 'thumbnails' %>
           </div>
         </div>
-
         <div data-hook="product_properties">
           <%= render :partial => 'properties' %>
-        </div>
+        </div>        
 
         <div data-hook="promotions">
           <%= render :partial => 'promotions' %>
@@ -54,9 +53,143 @@
     </div>
 
         </div>
+
 <div id="taxon-crumbs" class="nav navbar-nav" data-hook="product_taxons">
           <%= render :partial => 'taxons' %>
   </div>
+
 <% end %>
 
+<script>
+$("td:contains('Only with Egg')").replaceWith("\
+    <div class=\"brander\"> \
+        <img src=\"http:\/\/i.imgur.com/ONBo3Zf.png\"> \
+        <div class=\"value-propositions\">Only With Egg</div> \
+    </div>");
+//only with egg
 
+$("td:contains('Only Eggless')").replaceWith("\
+    <div class=\"brander\"> \
+        <img src=\"http:\/\/i.imgur.com/MTRR9yk.png\"> \
+        <div class=\"value-propositions\">Eggless</div> \
+    </div>");
+//only with egg
+
+
+$("td:contains('Without Egg')").replaceWith("\
+    <div class=\"brander\"> \
+        <img src=\"http:\/\/i.imgur.com/MTRR9yk.png\"> \
+        <div class=\"value-propositions\">Eggless</div> \
+    </div>");
+//only eggless
+
+$("td:contains('Both Available')").replaceWith("\
+    <div class=\"brander\"> \
+        <img src=\"http:\/\/i.imgur.com/ONBo3Zf.png\"> \
+        <img src=\"http:\/\/i.imgur.com/MTRR9yk.png\"> \
+        <div class=\"value-propositions\">Both</div> \
+    </div>");
+//both egg and eggless available
+
+$("td:contains('Boozy')").replaceWith("\
+    <div class=\"brander\"> \
+        <img src=\"http:\/\/i.imgur.com/4x4cDec.png\"> \
+        <div class=\"value-propositions\">Boozy</div> \
+    </div>");
+//BOOZYYYY
+
+$("td:contains('Fruity')").replaceWith("\
+    <div class=\"brander\"> \
+        <img src=\"http:\/\/i.imgur.com/4x4cDec.png\"> \
+        <div class=\"value-propositions\">Fruity</div> \
+    </div>");
+//fruity
+
+$("td:contains('Serves')").replaceWith("\
+    <div class=\"brander\"> \
+        <img src=\"http:\/\/i.imgur.com/B4AerIM.png\"> \
+    </div>");
+$("td:contains('serves')").replaceWith("\
+    <div class=\"brander\"> \
+        <img src=\"http:\/\/i.imgur.com/B4AerIM.png\"> \
+    </div>");
+//Serves
+
+
+//nutella
+$("td:contains('Nutella')").replaceWith("\
+    <div class=\"brander\"> \
+        <img src=\"http:\/\/i.imgur.com/NP6oNCz.png\"> \
+        <div class=\"value-propositions\">Nutella</div> \
+    </div>");
+
+
+//chocolate icon 
+$("td:contains('Chocolate')").replaceWith("\
+    <div class=\"brander\"> \
+        <img src=\"http:\/\/i.imgur.com/ByjRt19.png\"> \
+        <div class=\"value-propositions\">Chocolate</div> \
+    </div>");
+
+$("td:contains('Nutty')").replaceWith("\
+    <div class=\"brander\"> \
+        <img src=\"http:\/\/i.imgur.com/OXftMdE.png\"> \
+        <div class=\"value-propositions\">Nutty</div> \
+    </div>");
+//nutty
+
+$("td:contains('Sugar-free option available')").replaceWith("\
+    <div class=\"brander\"> \
+        <img src=\"http:\/\/i.imgur.com/tXOK119.png\"> \
+        <div class=\"value-propositions\">SugarFree</div> \
+    </div>");
+//sugarfree option available
+
+$("td:contains('Sweet')").replaceWith("\
+    <div class=\"brander\"> \
+        <img src=\"http:\/\/i.imgur.com/dLU8N1R.png\"> \
+        <div class=\"value-propositions\">Sweet</div> \
+    </div>");
+//sugar
+
+$("td:contains('Seasonal')").replaceWith("\
+    <div class=\"brander\"> \
+        <img src=\"http:\/\/i.imgur.com/tgFuDtP.png\"> \
+        <div class=\"value-propositions\"></div> \
+    </div>");
+//seasonal
+
+$("td:contains('Healthy')").replaceWith("\
+    <div class=\"brander\"> \
+        <img src=\"http:\/\/i.imgur.com/gsEYmxO.png\"> \
+        <div class=\"value-propositions\"></div> \
+    </div>");
+//healthy
+
+$("td:contains('No')").replaceWith("\
+    <div class=\"brander\"> \
+        <img src=\"http:\/\/i.imgur.com/hNKVfOA.png\"> \
+        <div class=\"value-propositions\">Gluten-Free</div> \
+    </div>");
+//Gluten Free
+
+
+
+</script>
+<style>
+.brander{
+text-align:center;
+}
+
+td:first-child {
+    display: none;
+}
+
+#product-properties > tbody > tr:nth-child(2) > td {
+left:69%;
+}
+#product-properties > tbody > tr:nth-child(2) > div > img{
+position:relative;
+top:8px;
+}
+</style>
