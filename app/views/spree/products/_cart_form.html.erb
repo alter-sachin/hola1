@@ -39,6 +39,13 @@
               <span class="lead price selling" itemprop="price">
               <%= display_price(@product) %>
             </span>
+            <script>
+		var a = <%= display_price(@product) %>
+ 		fbq('track', 'ViewContent', {
+		value: a,
+		currency: 'INR'
+		});
+            </script>
             <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
         <% end %>
 
@@ -52,7 +59,16 @@
       </div>
       <div class="input-group" id="in-grp-add">
                 <button class="btn btn-success" disabled id="add-cart-button"  type="submit" disabled style="width: 100%">
-                  <%= Spree.t(:add_to_cart) %>
+                  <%= Spree.t(:add_to_cart) %> 
+		  
+ 			<script>
+                        var a = <%= display_price(@product) %>
+			fbq('track', 'AddToCart', {
+			value: a ,
+			currency: 'INR'
+			});
+		        </script>
+
                 </button>
             </div>
     <% else %>

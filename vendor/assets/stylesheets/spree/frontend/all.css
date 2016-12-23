@@ -9,6 +9,8 @@
  *= require_tree .
  *= require spree/frontend/spree_social
  *= require spree/frontend/spree_social_products
+ *= require slick
+ *= require slick-theme
 */
 
 
@@ -222,6 +224,31 @@ border:none !important;
     width:0% !important;
 }
 
+#product-properties > tbody > tr:nth-child(2) > td:nth-child(2) {
+left: 30% !important;
+}
+
+h6.search-results-title {
+     font-size: 2.2em;
+    text-align: center;
+    top: 4em;
+    position: relative;
+    display: block;
+    -webkit-margin-before: 2.33em;
+    -webkit-margin-after: 2.33em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+#content {
+    min-height: 21.5em;
+}
+
+.slick-slide{
+width: 270px;
+}
 
 
-
+.slick-prev:before, .slick-next:before{
+color : #100f0f !important ;
+}
