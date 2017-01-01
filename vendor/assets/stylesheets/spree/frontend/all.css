@@ -252,3 +252,7 @@ width: 270px;
 .slick-prev:before, .slick-next:before{
 color : #100f0f !important ;
 }
+
+label.line{
+width:4em !important;
+}

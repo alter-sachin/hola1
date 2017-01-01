@@ -32,7 +32,32 @@
 
 
 <div data-hook="homepage_products">
-  <h3 style="width: 100%;text-align: center;font-family: ubuntu-bold; padding-top: 1em;">Trending Items</h3>
+  <ul class="cbp-ig-grid">
+			<h3 style="width: 100%;text-align: center;font-family: ubuntu-bold; padding-top: 1em;">Collections</h3>
+                        <label class="line"></label>
+					<li>
+						<a href="#trending">
+							<span><img src="/assets/images/birthday-cake-1.svg" style="height:200px;"/></span>
+							<h3 class="cbp-ig-title">Hot Products</h3>
+							<span class="cbp-ig-category">Our best selling!</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span><img src="/assets/images/health-care.svg" style="height:200px;"/></span>
+							<h3 class="cbp-ig-title">Healthy</h3>
+							<span class="cbp-ig-category">Health And Goodies!</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span><img src="/assets/images/gift-1.svg" style="height:200px;"/></span>
+							<h4 class="cbp-ig-title">Giftpacks</h4>
+							<span class="cbp-ig-category">Cravings Packed with love!</span>
+						</a>
+					</li>
+   </ul>
+  <h3 id="trending" style="width: 100%;text-align: center;font-family: ubuntu-bold; padding-top: 1em;">Trending Items</h3>
   <label class="line"></label>
   <% cache(cache_key_for_products) do %>
     <%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>

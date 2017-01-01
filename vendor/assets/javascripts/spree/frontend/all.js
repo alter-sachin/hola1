@@ -37,8 +37,8 @@ $(document).ready(function(){
   	slidesToShow: 3,
   	slidesToScroll: 3,
         autoplay: true,
-        arrows: true
-        prevArrow: $('.prev')
+        arrows: true,
+        prevArrow: $('.prev'),
         nextArrow: $('.next')
 	});
 		});
