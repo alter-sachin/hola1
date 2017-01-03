@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+
+gem 'spree_add_to_cart_ajax',github: 'alter-sachin/spree_add_to_cart_ajax'
 gem 'offsite_payments'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7'

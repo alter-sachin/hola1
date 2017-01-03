@@ -31,14 +31,3 @@ for (var i =0 ;i<pin.length ; i++){
 }
 
 
-$(document).ready(function(){
-   $('.slicker').slick({
-  	infinite: true,
-  	slidesToShow: 3,
-  	slidesToScroll: 3,
-        autoplay: true,
-        arrows: true,
-        prevArrow: $('.prev'),
-        nextArrow: $('.next')
-	});
-		});

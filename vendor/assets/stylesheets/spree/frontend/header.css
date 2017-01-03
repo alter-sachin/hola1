@@ -51,8 +51,7 @@ border-color: #4cae4c;
     display: inline-block;
     width: auto;
     vertical-align: middle;
-    height: 27px;
-    
+       
 }
 
 li#search-bar {
@@ -68,4 +67,35 @@ navbar-nav > li > a {
 .head-top{
     border-bottom: 1px solid #eee;
     border-right: 1px solid #eee;
+}
+
+span#logo {
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+    top: .5em;
+}
+
+li#contactinfo {
+    margin: .9em;
+    color: #d93934;
+    font-size: 14px;
+}
+
+#nav-bar {
+    display: block;
+    text-decoration: none;
+    position: relative;
+    margin-top: .5%;
+}
+
+
+
+.form-control {
+font-size:12px !important;
+border-radius:0px !important;
+}
+
+li#link-to-cart a {
+    font-size: 14px !important;
 }

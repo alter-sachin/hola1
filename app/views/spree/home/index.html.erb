@@ -33,39 +33,97 @@
 
 <div data-hook="homepage_products">
   <ul class="cbp-ig-grid">
-			<h3 style="width: 100%;text-align: center;font-family: ubuntu-bold; padding-top: 1em;">Collections</h3>
+			<h4 style="width: 100%;text-align: center;font-family: ubuntu-bold; padding-top: 1em;text-transform:uppercase;">Collections</h4>
                         <label class="line"></label>
 					<li>
 						<a href="#trending">
-							<span><img src="/assets/images/birthday-cake-1.svg" style="height:200px;"/></span>
+							<span><img src="/assets/images/birthday-cake-1.svg" style="height:140px;"/></span>
 							<h3 class="cbp-ig-title">Hot Products</h3>
 							<span class="cbp-ig-category">Our best selling!</span>
 						</a>
 					</li>
 					<li>
 						<a href="#">
-							<span><img src="/assets/images/health-care.svg" style="height:200px;"/></span>
+							<span><img src="/assets/images/health-care.svg" style="height:140px;"/></span>
 							<h3 class="cbp-ig-title">Healthy</h3>
 							<span class="cbp-ig-category">Health And Goodies!</span>
 						</a>
 					</li>
 					<li>
-						<a href="#">
-							<span><img src="/assets/images/gift-1.svg" style="height:200px;"/></span>
+						<a href="http://shop.eattreatonline.com/t/collections/gift-packs">
+							<span><img src="/assets/images/gift.svg" style="height:140px;"/></span>
 							<h4 class="cbp-ig-title">Giftpacks</h4>
 							<span class="cbp-ig-category">Cravings Packed with love!</span>
 						</a>
 					</li>
    </ul>
-  <h3 id="trending" style="width: 100%;text-align: center;font-family: ubuntu-bold; padding-top: 1em;">Trending Items</h3>
+  <h4 id="trending" style="width: 100%;text-align: center;font-family: ubuntu-bold; padding-top: 1em;text-transform:uppercase;">Trending Items</h4>
   <label class="line"></label>
   <% cache(cache_key_for_products) do %>
     <%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
     
   <% end %>
 </div>
+<div class="jumbotron">
+     <ul class="list-group nav navbar-nav navbar-right" style="width:70%;margin-top:-2em;">
+	            <li class="list-group-item">
+                       <a id="linker" href="http://shop.eattreatonline.com/t/bakers/sweet-nothings-avanti-mathur"style="font-size:16px;">
+                     Sweet Nothings - Avanti Mathur
+                       </a>
+                    </li>
+	           <li class="list-group-item">
+                      <a id="linker" href="http://shop.eattreatonline.com/t/bakers/binge-and-slurp-rukmin-juneja" style="font-size:16px;">
+                     Binge & Slurp - Rukmin Juneja
+                      </a>
+                   </li>
+	           <li class="list-group-item">
+                      <a id="linker" href="http://shop.eattreatonline.com/t/bakers/sinful-bites-niti-jolly" style="font-size:16px;">
+                     Sinful Bites - Niti Jolly
+                      </a>
+                   </li>
+	           <li class="list-group-item">
+                      <a id="linker" href="http://shop.eattreatonline.com/t/bakers/the-sweet-story-juhi-gupta" style="font-size:16px;">
+                     The Sweet Story - Juhi Gupta
+                      </a>
+                   </li>
+ 	           <li class="list-group-item">
+                     <a id="linker" href="http://shop.eattreatonline.com/t/bakers/sinfully-yours-rashmi-kandhari" style="font-size:16px;">
+                     Sinfully Yours - Rashmi Kandhari
+                     </a>
+                   </li>
+	           <li class="list-group-item">
+                     <a id="linker" href="http://shop.eattreatonline.com/t/bakers/lets-bake-love-sara-taneja" style="font-size:16px;">
+                   Lets Bake Love - Sara Taneja
+                     </a>
+                   </li>
+	           <li class="list-group-item">
+                     <a id="linker" href="http://shop.eattreatonline.com/t/bakers/baking-from-my-heart-aarti-sarin-jain" style="font-size:16px;">
+                    Baking From My Heart - Aarti Sarin Jain
+                     </a>
+                   </li>
+	           <li class="list-group-item">
+                     <a id="linker" href="http://shop.eattreatonline.com/t/bakers/hot-pink-cake-studio-ipshita-chakladhar-mazumdar" style="font-size:16px;">
+                   The Hot Pink Cake Studio - Ipshita
+                     </a>
+                   </li>
+	           <li class="list-group-item">
+                     <a id="linker" href="http://shop.eattreatonline.com/t/bakers/luckys-bakery-vasant-kunj" style="font-size:16px;">
+                     Lucky's Bakery - Vasant Kunj
+                     </a>
+                   </li>
+	           <li class="list-group-item">
+                     <a id="linker" href="http://shop.eattreatonline.com/t/bakers/all-things-yummy-nimisha-goel" style="font-size:16px;">
+                      All Things Yummy - Nimisha Goel
+                     </a>
+                   </li>
+                 </ul>
+     <p style="width:30%;">Our partners are premium homebakers that use fresh ingredients to get you the best desserts. With years of baking experience, great quality is assured!</p>
+        
+                  
+</div>
 
-<h3 style="width: 100%;text-align: center;font-family: ubuntu-bold; padding-top: 1em;">Trending Articles</h3>
+
+<h4 style="width: 100%;text-align: center;font-family: ubuntu-bold; padding-top: 1em;text-transform:uppercase;">Trending Articles</h4>
 <label class="line"></label>
 
 <div class="content-mid">

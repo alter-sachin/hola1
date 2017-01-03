@@ -1,7 +1,27 @@
-<div class="header">
 
-      <%= render :partial => 'spree/shared/taxonomies' %>
+<nav class="navbar col-md-12 col-sm-12" id="top-nav-bar">
+  <ul id="nav-bar" class="nav navbar-nav navbar-left">
+   <li id="contactinfo"><span class="color2">+91-9599818147</span></li>
+   <li id="contactinfo"><span class="color2">info@eattreatonline.com</span></li>
+   
+  </ul>
+  <span id="logo">
+  <a href="/"><img src="/assets/images/logo_p.png" alt="" ></a> 
+  
+  </span>
+  <ul id="nav-bar" class="nav navbar-nav navbar-right " data-hook>
+    <li data-hook>
+      <%= render :partial => 'spree/shared/search' %>
+    </li>
+     <li id="link-to-cart" data-hook>
+        <noscript>
+          <%= link_to Spree.t(:cart), '/cart' %>
+        </noscript>
+        &nbsp;
+      </li>
+      <script>Spree.fetch_cart()</script>
+  </ul>
 
-</div>
+</nav>
 
 
