@@ -1,6 +1,12 @@
 source 'https://rubygems.org'
 
 
+gem 'datashift', github: 'vinsol-spree-contrib/datashift', branch: '0-16-stable'
+gem 'datashift_spree', github: 'vinsol-spree-contrib/datashift_spree', branch: 'shopify/tmp'
+
+gem 'spree_datashift_prod_import', github: 'alter-sachin/spree_datashift_prod_import'
+
+
 gem 'spree_add_to_cart_ajax',github: 'alter-sachin/spree_add_to_cart_ajax'
 gem 'offsite_payments'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
